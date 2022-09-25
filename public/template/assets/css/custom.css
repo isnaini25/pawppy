@@ -1,0 +1,87 @@
+/**
+ *
+ * You can write your CSS code here, DO NOT touch the default JavaScript file
+ * because it will make it harder for you to update.
+ * 
+ */
+
+
+/*# sourceMappingURL=custom.css.map */
+
+.img-thumbnail {
+    width: 300px;
+}
+
+.gambar-penyakit {
+    width: 100px;
+    max-height: 200px;
+}
+
+.gambar-penyakit-detail {
+    width: 200px;
+    max-height: 200px;
+}
+
+.input-penyakit {
+    display: inline-block;
+}
+
+.btn-cari {
+    display: inline-block;
+    margin-left: -50px;
+    margin-top: 4px;
+    background: none;
+    position: absolute;
+}
+
+.label-block {
+    display: block;
+}
+
+#btn-diagnosis {
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+}
+
+@media screen and (min-width: 400px) {
+    .article-image img {
+        height: 400px;
+        width: 1200px;
+        object-fit: cover;
+    }
+}
+
+.article-desc {
+    margin-top: -10px;
+    padding: 20px 20px 8px 20px;
+    border-radius: 10px;
+    background-color: rgb(245, 245, 252);
+    display: block;
+}
+
+.article-content {
+    padding: 10px 20px;
+}
+
+.icon-password div i {
+    background: none;
+    cursor: pointer;
+}
+
+
+/* .pilih {
+    width: 60%;
+}
+
+@media (min-width: 500px) {
+    .pilih {
+        width: 100%;
+    }
+} */
+
+
+/* .modal-backdrop {
+    position: fixed;
+    z-index: -2;
+} */
