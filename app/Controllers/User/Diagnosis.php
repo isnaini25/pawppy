@@ -9,6 +9,8 @@ use App\Models\Admin\GejalaModel;
 use App\Models\Admin\PenyakitModel;
 use App\Models\DiagnosisModel;
 
+use function PHPUnit\Framework\isEmpty;
+
 class Diagnosis extends BaseController
 {
     protected $diagnosisModel;
@@ -30,7 +32,7 @@ class Diagnosis extends BaseController
 
         $data = [
             'title' => 'Diagnosis',
-            'basisPengetahuan' => $this->basisPengetahuan->getBasisPengetahuan()->groupBy('basis_pengetahuan.id_gejala')->find(),
+            'basisPengetahuan' => $this->basisPengetahuan->getBasisPengetahuan()->find(),
             'validation' => \Config\Services::validation()
         ];
         // dd($this->basisPengetahuan->getData()->groupBy('basis_pengetahuan.id_gejala')->findAll());
@@ -156,14 +158,18 @@ class Diagnosis extends BaseController
             }
         }
         // dd($penyakitLain);
+
         foreach ($gejala as $g) {
-            if ($g['id_gejala'] == $gejala_decode['id_gejala'][$i]) {
+    
+            // if ($g['id_gejala'] == $gejala_decode['id_gejala'][$i]) {
+            if (in_array($g['id_gejala'], $gejala_decode['id_gejala'])) {
                 // echo $g['keterangan'] . '->' . $gejala_decode['nilai'][$i] . '<br>';
                 $gejalaTerpilih[] = array($g['keterangan'], $gejala_decode['nilai'][$i]);
             }
+
             $i++;
         }
-
+        
 
         $data = [
             'title'         => $title,
