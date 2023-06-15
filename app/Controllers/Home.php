@@ -6,6 +6,11 @@ use App\Models\Admin\ArtikelModel;
 
 class Home extends BaseController
 {
+    protected $artikelModel;
+    protected $config;
+    protected $session;
+    protected $auth;
+
     public function __construct()
     {
         $this->session = service('session');
